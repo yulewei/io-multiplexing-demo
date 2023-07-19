@@ -8,8 +8,11 @@
 
 volatile sig_atomic_t client_count = 0;
 
-void handler() {
+void child_handler() {
     client_count--;
+    int stat;
+    int pid = wait(&stat);
+    printf("child pid %d terminated, current total client count %d\n", pid, client_count);
 }
 
 int main(int argc, char *argv[]) {
@@ -30,7 +33,7 @@ int main(int argc, char *argv[]) {
     int optval = 1;
     setsockopt(server_socket, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
 
-    signal(SIGCHLD, handler);
+    signal(SIGCHLD, child_handler);
 
     printf("server started ...\n");
     while (1) {
@@ -55,6 +58,8 @@ int main(int argc, char *argv[]) {
             }
             // 退出子进程
             exit(0);
+        } else {
+            printf("child pid %d forked\n", pid);
         }
     }
 }
