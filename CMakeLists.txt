@@ -4,6 +4,7 @@ project(io-multiplexing-demo C)
 set(CMAKE_C_STANDARD 11)
 set(EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/build/)
 
+add_executable(echo_server_fork common.c echo_server_fork.c)
 add_executable(echo_server_poll common.c echo_server_poll.c)
 add_executable(echo_server_select common.c echo_server_select.c)
 
