@@ -10,6 +10,8 @@ make
 启动不同实现版本的 echo 服务：
 
 ```bash
+# 启动使用 fork 模式实现的 echo 服务，阻塞模式 I/O，每个客户端请求由单独创建的子进程处理
+./bulid/echo_server_fork
 # 启动使用 select() 函数实现的 echo 服务
 ./bulid/echo_server_select
 # 启动使用 poll() 函数实现的 echo 服务
