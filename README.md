@@ -1,4 +1,4 @@
-I/O 多路复用函数 [select](https://man7.org/linux/man-pages/man2/select.2.html)、[poll](https://man7.org/linux/man-pages/man2/poll.2.html)、[epoll](https://man7.org/linux/man-pages/man7/epoll.7.html) 和 [kqueue](https://man.freebsd.org/cgi/man.cgi?query=poll&apropos=0&sektion=2&manpath=FreeBSD+14.0-CURRENT&arch=default&format=html) 以及 [libevent](https://libevent.org/) 库，各自实现 echo 服务的示例代码。
+使用 I/O 多路复用函数 [select](https://man7.org/linux/man-pages/man2/select.2.html)、[poll](https://man7.org/linux/man-pages/man2/poll.2.html)、[epoll](https://man7.org/linux/man-pages/man7/epoll.7.html) 和 [kqueue](https://man.freebsd.org/cgi/man.cgi?query=poll&apropos=0&sektion=2&manpath=FreeBSD+14.0-CURRENT&arch=default&format=html) 以及 [libevent](https://libevent.org/) 库，各自实现 echo 服务的示例代码。
 
 编译代码：
 
