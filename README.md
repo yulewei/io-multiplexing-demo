@@ -1,4 +1,4 @@
-I/O 多路复用函数 [select](https://man7.org/linux/man-pages/man2/select.2.html)()、[poll](https://man7.org/linux/man-pages/man2/poll.2.html)()、[epoll](https://man7.org/linux/man-pages/man7/epoll.7.html)() 和 [kqueue](https://man.freebsd.org/cgi/man.cgi?query=poll&apropos=0&sektion=2&manpath=FreeBSD+14.0-CURRENT&arch=default&format=html)() 以及 [libevent](https://libevent.org/) 库，各自实现 echo 服务的示例代码。
+I/O 多路复用函数 [select](https://man7.org/linux/man-pages/man2/select.2.html)、[poll](https://man7.org/linux/man-pages/man2/poll.2.html)、[epoll](https://man7.org/linux/man-pages/man7/epoll.7.html) 和 [kqueue](https://man.freebsd.org/cgi/man.cgi?query=poll&apropos=0&sektion=2&manpath=FreeBSD+14.0-CURRENT&arch=default&format=html) 以及 [libevent](https://libevent.org/) 库，各自实现 echo 服务的示例代码。
 
 编译代码：
 
@@ -12,19 +12,19 @@ make
 ```bash
 # 启动使用 fork 模式实现的 echo 服务，阻塞模式 I/O，每个客户端请求由单独创建的子进程处理
 ./bulid/echo_server_fork
-# 启动使用 select() 函数实现的 echo 服务
+# 启动使用 select 函数实现的 echo 服务
 ./bulid/echo_server_select
-# 启动使用 poll() 函数实现的 echo 服务
+# 启动使用 poll 函数实现的 echo 服务
 ./bulid/echo_server_poll
-# 启动使用 epoll() 函数实现的 echo 服务（Linux 专用）
+# 启动使用 epoll 相关函数实现的 echo 服务（Linux 专用）
 ./bulid/echo_server_epoll
-# 启动使用 kqueue() 函数实现的 echo 服务（*BSD 专用）
+# 启动使用 kqueue 相关函数实现的 echo 服务（*BSD 专用）
 ./bulid/echo_server_kqueue
 # 启动使用 libevent 库实现的 echo 服务（跨平台）
 ./bulid/echo_server_libevent
 ```
 
-客户端连接 8080 端口：
+客户端连接服务器的 8080 端口：
 
 ``` bash
 nc 127.0.0.1 8088
